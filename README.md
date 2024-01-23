@@ -127,13 +127,13 @@ _ssh-add -K ~/.ssh/id_ed25519_
 **1.** Copy a public key:
 
 macOS: 
-'''bash
+'''java
 pbcopy < ~/.ssh/id_ed25519.pub
 // pbcopy - copy all content in the file
 '''
 
 Windows:
-'''bash
+'''java
 clip < ~/.ssh/id_ed25519.pub
 '''
 
@@ -145,7 +145,7 @@ _Setting/SSH and GPG keys/New SSH key
 
 **3.** Check the key in console:
 
-'''bash
+'''java
 ssh -T git@github.com
 // The first time if asks for authorization, have to enter 'yes'
 '''
@@ -156,7 +156,7 @@ ssh -T git@github.com
 
 **git remote add** - remote (удалённый), add (добавить)
 
-'''bash
+'''java
 git remote add origin git@github.com/repository_name/repository_URL
 // two parameters must be passed to the command
 // 'remote repository name' and 'URL'
@@ -174,7 +174,7 @@ _'-u' used only first time_
 
 **git clone** - download the project from remote repository
 
-'''bash
+'''java
 git clone https://github_repository_adres 'download/directory/adres'
 '''
 
@@ -182,14 +182,14 @@ git clone https://github_repository_adres 'download/directory/adres'
 
 - when trying to make a 'git pull' it gives an error:
 
-'''bash
+'''java
 remote: Invalid username or password
 fatal: Authentication failed for 'https://github.com/Shenbasy/first-profect.git
 '''
 
 - if the token has expired, a 'git pull' should be made with the following addition:
 
-'''bash
+'''java
 git pull https://username:token@github.com/Shenbasy/first-project.git
 '''
 
