@@ -23,16 +23,19 @@
 **mkdir -p** - with flag, creat directory structure
 
 for example:
+```java
+mkdir -p dir1/dir2/dir3
 
-_mkdir -p dir1/dir2/dir3_
+mkdir ~/my-git-dir // make dir. in home dir.
 
-_mkdir ~/my-git-dir_ - make dir. in home dir.
-
-_touch ../../file.txt_ - make file in two directory up
+touch ../../file.txt // make file in two directory up
+```
 
 **cd** - 'coupy' (_cp what.copy where/copy/to_)
 
-_cp todo.txt /c/Users/Sultan/Documents/Git-study_
+```java
+cp todo.txt /c/Users/Sultan/Documents/Git-study
+```
 
 **mv** - 'move', the syntax is the same as 'cp'
 
@@ -48,19 +51,22 @@ _cp todo.txt /c/Users/Sultan/Documents/Git-study_
 
 **&&** - 'two ampersands', allow multiple commands to be executed in turn
 
-_mkdir dir1 && cd dir1 && touch index.html_
-
+```java
+mkdir dir1 && cd dir1 && touch index.html
+```
 ## Commands for working with Git
 
 **git config --global** - 'git configuration' with key word 'global', allow to change name and email in Git
+```java
+git config --global user.name "name"
 
-_git config --global user.name "name"_
-
-_git config --global user.email "email@mail.com"
-
+git config --global user.email "email@mail.com"
+``````
 - Git stores all global settings in the '.gitconfig' file in your home directory
 
-_cat ~/.gitconfig
+```java
+cat ~/.gitconfig
+```
 
 **git config --list** - with flag 'list' the command line will show the current setting values
 
@@ -76,15 +82,18 @@ _cat ~/.gitconfig
 
 **git add** - add a file to the repository for tracking and saving
 
-_git add file.txt_
-
+```java
+git add file.txt
+```
 **git add --all** - with flag 'all' allows to add all the files
 
 (_git add ._ - alternative)
 
 **git  commit -m** - 'commit'(зафиксировать), flag '-m' (message)
 
-_git commit -m 'First commit'_
+```java
+    git commit -m 'First commit'
+```
 
 - first, the 'git add' command tells Git which files to save and what version they are. The 'git commit' command is used to do the saving 
 itself.
@@ -102,12 +111,17 @@ There are two keys:
 - private key
 - public key
 
-_cd ~/.ssh_ - directory with 'ssh' keys
+```java
+cd ~/.ssh // directory with 'ssh' keys
+```
 
 #### SSH key generation
 
-**1.** _ssh-keygen -t ed25519 -C "emailInGitHub@mail.com"_ **or if another protocol** _ssh-keygen -t rsa -b 4096 -C "emailInGitHub@mail.com"_
-
+**1.** _
+```java
+ssh-keygen -t ed25519 -C "emailInGitHub@mail.com"
+// or if another protocol: ssh-keygen -t rsa -b 4096 -C "emailInGitHub@mail.com"
+```
 **2.** Specify the location where the key is stored.
 
 **3.** Enter the key word.
@@ -115,27 +129,32 @@ _cd ~/.ssh_ - directory with 'ssh' keys
 **4.** Cheking for a key in the '.ssh' directory.
 
 **5.** Start agent:
-
-_eval "$(ssh-agent -s)"_ **or if another shell** _eval (ssh-agent -c)_
+```java
+eval "$(ssh-agent -s)"
+//or if another shell: eval (ssh-agent -c)
+```
+__
 
 **6.** Add a private key to the agent:
 
-_ssh-add -K ~/.ssh/id_ed25519_
+```java
+ssh-add -K ~/.ssh/id_ed25519
+```
 
 #### Binding SSH key to GitHub
 
 **1.** Copy a public key:
 
 macOS: 
-'''java
+```java
 pbcopy < ~/.ssh/id_ed25519.pub
 // pbcopy - copy all content in the file
-'''
+```
 
 Windows:
-'''java
+```java
 clip < ~/.ssh/id_ed25519.pub
-'''
+```
 
 - you can olso open content in the file with command 'cat' and copy
 
@@ -145,10 +164,10 @@ _Setting/SSH and GPG keys/New SSH key
 
 **3.** Check the key in console:
 
-'''java
+```java
 ssh -T git@github.com
 // The first time if asks for authorization, have to enter 'yes'
-'''
+```
 
 #### Linking local and remote repository
 
@@ -156,12 +175,12 @@ ssh -T git@github.com
 
 **git remote add** - remote (удалённый), add (добавить)
 
-'''java
+```java
 git remote add origin git@github.com/repository_name/repository_URL
 // two parameters must be passed to the command
 // 'remote repository name' and 'URL'
 // 'origin' as name (источник)
-'''
+```
 
 **git remote -v** - linking check
 
@@ -174,23 +193,23 @@ _'-u' used only first time_
 
 **git clone** - download the project from remote repository
 
-'''java
+```java
 git clone https://github_repository_adres 'download/directory/adres'
-'''
+```
 
 #### If token expired
 
 - when trying to make a 'git pull' it gives an error:
 
-'''java
+```java
 remote: Invalid username or password
 fatal: Authentication failed for 'https://github.com/Shenbasy/first-profect.git
-'''
+```
 
 - if the token has expired, a 'git pull' should be made with the following addition:
 
-'''java
+```java
 git pull https://username:token@github.com/Shenbasy/first-project.git
-'''
+```
 
 - where 'username' is your user name, and 'token' is your generated access token
