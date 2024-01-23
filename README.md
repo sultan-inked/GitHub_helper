@@ -2,11 +2,11 @@
 
 ## Working with command line
 
-**pwd** - print working directory
-**cd** - change directory
-**~** home directory (_cd ~_)
-**..** - parent directory (_cd.._)
-**.** - current directory
+**pwd** - print working directory.
+**cd** - change directory.
+**~** home directory (_cd ~_).
+**..** - parent directory (_cd.._).
+**.** - current directory.
 **ls** - list directory contents
 **ls** - l.d.c. with flag output the 'all' explended list
 **touch** - make new file
